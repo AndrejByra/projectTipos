@@ -8,7 +8,8 @@ public class mysqldatabase {
     private final String url="jdbc:mysql://localhost:3306/";
     private final String dbName="tipos";
     private final String driver="com.mysql.jdbc.Driver";
-    private final String userName="user2";
+    private final String userName2="user2";
+    private final String userName1="user1";
     private final String password="andrej";
     private Connection conn;
 
@@ -16,7 +17,7 @@ public class mysqldatabase {
         try {
             Class.forName(driver).newInstance();
 
-        conn= DriverManager.getConnection( url+dbName, userName, password);
+        conn= DriverManager.getConnection( url+dbName, userName2, password);
         if (conn == null)
             System.out.println("connection failed");
         else
@@ -32,7 +33,7 @@ public class mysqldatabase {
         try
         {
             Class.forName(driver).newInstance();
-            conn=DriverManager.getConnection(url+dbName, userName,password);
+            conn=DriverManager.getConnection(url+dbName, userName2,password);
             String cmd="INSERT INTO draw_history(ball1, ball2, ball3, ball4, ball5) ";
             cmd+=" VALUES (?, ?, ?, ?, ?)";
             PreparedStatement preparedStatement=conn.prepareStatement(cmd);
@@ -51,6 +52,21 @@ public class mysqldatabase {
         }
 
         return true;
+    }
+    public void getBets(){
+
+        try
+        {
+            Class.forName(driver).newInstance();
+            conn= DriverManager.getConnection(url+dbName, userName1,password);
+            String cmd="SELECT * FROM bets"+
+                    "INNER JOIN bet_details ON bets.id=bet_details.idb"+
+                    "INNER bets.draw_id IS NULL";
+        }
+        catch (Exception e)
+        {
+            System.out.println("Error"+e.getMessage());
+        }
     }
 
 
