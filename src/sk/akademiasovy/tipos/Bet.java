@@ -1,26 +1,63 @@
 package sk.akademiasovy.tipos;
 
+import java.util.Date;
 
 public class Bet {
     private int id;
-    private int idUser;
-    private int date;
-    private int draw_id;
-    private int ball1;
-    private int ball2;
-    private int ball3;
-    private int ball4;
-    private int ball5;
 
-    public Bet(int id, int idUser, int date, int ball1, int ball2, int ball3, int ball4, int ball5) {
+    public int getId() {
+        return id;
+    }
+
+    public int getIduser() {
+        return iduser;
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public int getDrawid() {
+        return drawid;
+    }
+
+    public int getBet1() {
+        return bet1;
+    }
+
+    public int getBet2() {
+        return bet2;
+    }
+
+    public int getBet3() {
+        return bet3;
+    }
+
+    public int getBet4() {
+        return bet4;
+    }
+
+    public int getBet5() {
+        return bet5;
+    }
+
+    private int iduser;
+    private Date date;
+    private int drawid;
+    private int bet1;
+    private int bet2;
+    private int bet3;
+    private int bet4;
+    private int bet5;
+
+    public Bet(int id, int iduser, Date date, int bet1, int bet2, int bet3, int bet4, int bet5) {
         this.id = id;
-        this.idUser = idUser;
+        this.iduser = iduser;
         this.date = date;
-        this.ball1 = ball1;
-        this.ball2 = ball2;
-        this.ball3 = ball3;
-        this.ball4 = ball4;
-        this.ball5 = ball5;
+        this.bet1 = bet1;
+        this.bet2 = bet2;
+        this.bet3 = bet3;
+        this.bet4 = bet4;
+        this.bet5 = bet5;
     }
 }
-

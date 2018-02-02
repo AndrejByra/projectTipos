@@ -2,7 +2,7 @@ package sk.akademiasovy.tipos;
 
 import java.util.Arrays;
 import java.util.Random;
-
+import java.util.List;
 
 public class Tipos {
     private int [] arr;
@@ -46,4 +46,18 @@ public class Tipos {
             System.out.println(this.arr[i]);
         }
     }
+    public void printNewBets(List<Bet> list){
+        if (list == null || list.size() == 0){
+            System.out.println("No Bets in the database ! ");
+        }
+        else {
+            for (Bet temp:list){
+                System.out.println("Bet: "+temp.getId()+" "+temp.getDate()+" "+temp.getIduser());
+                System.out.println(" > "+temp.getBet1()+ " "+temp.getBet2()+" "+temp.getBet3()+" "+temp.getBet4()+ " "+temp.getBet5()+" < ");
+            }
+        }
+
+    }
+
+
 }
